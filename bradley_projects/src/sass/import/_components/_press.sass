@@ -1,0 +1,114 @@
+.press-grid
+	&__inner
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		margin-left: -20px
+		margin-right: -20px
+
+.news-item-compact
+	padding: 20px
+	width: 50%
+	color: #000
+
+	&__inner
+		background: #F5F5F5
+		border: 1px solid #ccc
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		align-items: stretch
+		width: 100%
+		padding: 30px
+		position: relative
+
+	&__img
+		width: 164px
+		flex-shrink: 0
+		margin-right: 52px
+
+	&__title
+		font-weight: normal
+		font-size: 28px
+		line-height: 1em
+
+	&__main
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
+		align-items: flex-start
+
+	&__bottom
+		margin-top: auto
+		padding-top: 105px
+
+	&__pub-date
+		font-size: 16px
+		line-height: 1em
+		font-weight: normal
+		font-family: $mono
+
+	&__tag
+		padding: 4px 5px 3px
+		border: 1px solid #000
+		display: inline-block
+
+		font-weight: normal
+		font-size: 12px
+		line-height: 100%
+		letter-spacing: 0.05em
+		text-transform: uppercase
+		font-family: $mono
+		margin-top: 20px
+
+.circle-link-black
+	display: block
+	width: 50px
+	height: 50px		
+	position: absolute
+	top: 20px
+	right: 20px
+	z-index: 3
+	cursor: pointer
+
+	&:before
+		content: ''
+		display: block
+		width: 30px
+		height: 30px
+		background: transparent url("../img/project-link-black.svg") no-repeat 0 0
+		position: absolute
+		top: 10px
+		right: 10px
+
+@media screen and (max-width: 1230px)
+	/**/
+	.news-item-compact
+		&__title
+			font-size: 22px
+
+		&__img
+			margin-right: 32px
+
+@media screen and (max-width: 1024px)
+	/**/
+	.news-item-compact
+		&__main
+			margin-top: 30px
+
+		&__inner
+			flex-direction: column
+
+		&__bottom
+			padding-top: 40px
+
+	.press-grid
+		.view-more
+			margin-top: 20px
+
+@media screen and (max-width: 767px)
+	/**/
+	.news-item-compact
+		width: 100%
+		padding-top: 15px
+		padding-bottom: 15px

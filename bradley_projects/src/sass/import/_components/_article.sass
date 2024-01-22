@@ -1,0 +1,58 @@
+.article-author
+	font-size: 22px
+	line-height: 1em
+	font-weight: 500
+
+	span
+		color: #808080
+		font-weight: normal
+
+	& + .article-pub-date
+		margin-top: 10px
+
+.article-pub-date
+	font-size: 16px
+	line-height: 1em
+	font-weight: normal
+	font-family: $mono
+
+.hero-article
+	margin-bottom: 150px
+
+	img
+		width: 100%
+
+.similar-articles
+	padding-top: 150px
+
+	.section-heading
+		border-bottom: none
+		
+	.section-content
+		padding-top: 29px
+		padding-bottom: 60px
+
+@media screen and (max-width: 1230px)
+	/**/
+	.similar-articles
+		padding-top: 100px
+
+		.section-content
+			padding-bottom: 40px
+
+	.hero-article
+		margin-bottom: 100px
+
+@media screen and (max-width: 767px)
+	/**/
+	.similar-articles
+		padding-top: 60px
+
+		.section-heading
+			padding-bottom: 31px
+
+	.article-author
+		font-size: 18px
+
+	.hero-article
+		margin-bottom: 60px

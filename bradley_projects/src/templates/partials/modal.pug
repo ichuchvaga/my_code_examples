@@ -1,0 +1,92 @@
+div(class="modal" tabindex="-1" id="modal-contact")
+	div(class="modal-dialog modal-dialog-centered")
+		div(class="modal-content")
+			.modal-body
+				button(type="button" class="btn-close btn-close--custom" data-bs-dismiss="modal" aria-label="Close")
+				.modal-title Contact
+
+				form.form.contact-form
+					.form-fields
+						.row
+							.col-12.col-sm-12.col-lg-6
+								.form-group
+									input(
+										type="text"
+										class="form-control"
+										placeholder="Name"
+										value=""
+										name="name"
+									)
+									.invalid-feedback Please fill the Name field.
+
+							.col-12.col-sm-12.col-lg-6
+								.form-group
+									.dropdown-field
+										select(name="company" class="form-select")
+											option(selected disabled) Company To Contact
+											option(value="The Bradley Projects") The Bradley Projects
+											option(value="Bradley Development Group") Bradley Development Group
+											option(value="Certified Construction Services") Certified Construction Services
+										.invalid-feedback Please select the Company To Contact
+
+						.row
+							.col-12.col-sm-12.col-lg-6
+								.form-group
+									input(
+										type="email"
+										class="form-control"
+										placeholder="Email"
+										value=""
+										name="email"
+									)
+									.invalid-feedback Please fill the Email field.
+							.col-12.col-sm-12.col-lg-6
+								.form-group
+									input(
+										type="tel"
+										class="form-control"
+										placeholder="Phone"
+										value=""
+										name="phone"
+										required
+									)
+									.invalid-feedback Please fill the Phone field.
+
+						.row
+							.col
+								.form-group
+									textarea(class="form-control" rows="3" placeholder="Message")
+											
+					.form-bottom
+						.form-agreement
+							label.checkbox-field
+								input(type="checkbox" name="agree" value="yes")
+								span.checkbox-field__icon
+								span.checkbox-field__text I agree to the <a href="#" class="js-agreement-text-link">privacy statement</a>
+
+						.form-submit
+							button(type="submit" class="btn btn-primary btn--with-icon")
+								span.btn__text Submit
+								span.btn__icon
+									span.icon.icon-arrow-right
+
+				.modal-contacts
+					.modal-contacts__col
+						.modal-contacts__title ADDRESS
+						.modal-contacts__text 1812 Morena Street<br> Nashville, Tennessee  37208
+					.modal-contacts__col
+						.modal-contacts__title EMail
+						.modal-contacts__text
+							a(href="mailto:contact@thebpi.com") contact@thebpi.com
+					.modal-contacts__col
+						.modal-contacts__title Phone
+						.modal-contacts__text
+							a(href="tel:+16193192242") +1 619-319-2242
+
+div(class="modal" tabindex="-1" id="modal-success")
+	div(class="modal-dialog modal-dialog-centered")
+		div(class="modal-content")
+			.modal-body
+				button(type="button" class="btn-close btn-close--custom" data-bs-dismiss="modal" aria-label="Close")
+				.modal-title Thank you!
+				.modal-success-text We will contact you shortly

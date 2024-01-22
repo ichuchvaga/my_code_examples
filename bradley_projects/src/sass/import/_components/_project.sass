@@ -1,0 +1,174 @@
+.project-summary
+	max-width: 100%
+	margin-left: 0
+	margin-right: 0
+	padding-left: calc(50% - 630px)
+	padding-right: 0
+
+	&__wrapper
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		justify-content: flex-start
+		align-items: flex-start
+		width: 100%
+
+	&__l
+		width: 630px
+		padding-right: 80px
+
+	&__r
+		flex-grow: 1
+
+	&__text
+		font-weight: 300
+		font-size: 18px
+		line-height: 1.7em
+
+		p
+			margin-bottom: 32px
+
+			&:last-child
+				margin-bottom: 0
+
+	.section-heading
+		border-bottom: none
+		padding-bottom: 0
+		margin-bottom: 60px
+		padding-top: 25px
+
+		&__l
+			padding-top: 18px
+	
+.summary-list-container
+	background-color: #F5F5F5
+	border-style: solid
+	border-color: #ccc
+	border-width: 1px 0 1px 1px
+	padding: 52px 100px
+
+.summary-list-item
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: flex-start
+	align-items: flex-start
+	padding: 20px 0
+
+	&__caption
+		flex-shrink: 0
+		width: 147px
+		padding-right: 24px
+		font-family: $mono
+		font-weight: normal
+		font-size: 12px
+		line-height: 1.2em
+		letter-spacing: 0.15em
+		text-transform: uppercase
+
+	&__value
+		font-size: 18px
+		line-height: 1em
+		font-weight: 300
+
+.project-summary + .projects-gallery-section
+	padding-top: 200px
+	padding-bottom: 0
+
+.project-services
+	display: flex
+	width: 100%
+	justify-content: flex-start
+	align-items: center
+	margin-bottom: 40px
+
+	&__title
+		letter-spacing: 0.15em
+		text-transform: uppercase
+		font-family: $mono
+		font-size: 12px
+		font-weight: normal
+		line-height: 1.2em
+
+.project-service
+	display: inline-block
+	vertical-align: top
+	padding: 5px 10px
+	border: 1px solid #000
+
+	font-family: $mono
+	font-size: 16px
+	line-height: 1em
+	letter-spacing: 0.05em
+	text-transform: uppercase
+	color: #000000
+	text-decoration: none
+	margin-left: 30px
+	margin-bottom: 15px
+
+@media screen and (max-width: 1439px)
+	/**/
+	.project-summary
+		padding-left: 90px
+
+@media screen and (max-width: 1230px)
+	/**/
+	.project-summary + .projects-gallery-section
+		padding-top: 100px
+
+	.project-summary
+		padding-left: 50px
+
+@media screen and (max-width: 1024px)
+	/**/
+	.project-summary
+		padding-left: 15px
+		padding-right: 15px
+
+	.summary-list-container
+		padding-left: 50px
+		padding-right: 50px
+
+@media screen and (max-width: 991px)
+	/**/
+	.project-summary
+		&__l
+			width: 100%
+			padding-right: 40px
+
+		&__r
+			margin-top: 40px
+			flex-grow: 0
+			width: 100%
+
+		&__wrapper
+			flex-direction: column
+
+	.summary-list-container
+		border-width: 1px
+
+@media screen and (max-width: 767px)
+	/**/
+	.project-summary + .projects-gallery-section
+		padding-top: 60px
+
+		.section-heading
+			padding-bottom: 60px
+
+	.project-service
+		font-size: 14px
+
+	.project-services
+		display: block
+		margin-bottom: 30px
+
+		&__list
+			margin-left: -29px
+			margin-top: 20px
+
+	.summary-list-container
+		padding: 15px
+
+	.summary-list-item
+		&__caption
+			width: 124px

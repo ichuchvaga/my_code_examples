@@ -1,0 +1,86 @@
+.container
+	max-width: 1440px
+	padding-left: 90px
+	padding-right: 90px
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+
+.page
+	overflow: hidden
+	min-height: 100%
+	
+.vertical-lines
+	height: 0
+	position: relative
+
+	&:before
+		content: ''
+		display: block
+		width: 1px
+		position: absolute
+		top: 0
+		left: 90px
+		height: 15000px
+		background-color: #ccc
+		z-index: 1
+
+	&:after
+		content: ''
+		display: block
+		width: 1px
+		position: absolute
+		top: 0
+		right: 90px
+		height: 15000px
+		background-color: #ccc
+		z-index: 1
+
+	&__center
+		display: block
+		width: 1px
+		position: absolute
+		top: 0
+		left: 50%
+		height: 15000px
+		background-color: #ccc
+		z-index: -1
+
+.page-content-border
+	border-top: 1px solid #ccc
+
+@media screen and (max-width: 1230px)
+	/**/
+	.vertical-lines
+
+		&:before
+			left: 50px
+
+		&:after
+			right: 50px
+
+	.container
+		padding-left: 50px
+		padding-right: 50px
+
+@media screen and (max-width: 1024px)
+	/**/
+	.container
+		max-width: 100%
+		padding-left: 15px
+		padding-right: 15px
+
+	.vertical-lines
+
+		&:before
+			left: 15px
+
+		&:after
+			right: 15px
+
+		&__center
+			display: none
+
+@media (max-width: 991px)
+	/**/
+	

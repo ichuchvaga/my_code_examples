@@ -1,0 +1,34 @@
+//- HTML start
+include ../data/portfolio
+include ../data/article
+
+doctype html
+html(lang="en")
+	head
+		include ../partials/head
+
+	body
+		
+
+		.page
+			.vertical-lines.container
+				//-.vertical-lines__center
+
+			include ../partials/header
+
+			.error-page
+				.container
+					.error-page__inner
+						.error-page__main
+							h1 Error 404
+							p The page you were looking for doesn't exist. You may have mistyped the address or the page may have moved.
+							p
+								a(href="javascript:void(0);" class="btn btn-primary btn--with-icon")
+									span.btn__text Get Back to our homepage
+									span.btn__icon
+										span.icon.icon-arrow-right
+										
+						.error-page__img
+							img(src="src/img/404.jpg" alt="")
+
+			include ../partials/js

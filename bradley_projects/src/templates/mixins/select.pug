@@ -1,0 +1,37 @@
+mixin select(obj)
+	-
+		var name = obj.name || "";
+
+		var options = ["Option 1", "Option 2", "Option 3"]; 
+		if (obj.options) options = obj.options;
+
+		var selected = "";
+		if (obj.selected) selected = obj.selected;
+
+		var input_id = "";
+		if (obj.id) input_id = obj.id;
+
+		var input_label = "";
+		if (obj.label) input_label = obj.label;
+
+		var input_required = obj.required || false;
+		var requiredClass = "";
+		if (input_required) requiredClass = " required";
+
+	div(class="form-group select-box" + requiredClass)
+		label(for=input_id) #{input_label}
+
+		.select-control
+			select(
+				class="select form-control"
+				name=name
+				id=input_id
+			)
+				each el in options
+					- var isActive = false;
+					- if (el == selected) isActive = true;
+
+					option(
+						value=el
+						selected=isActive
+					) #{el}

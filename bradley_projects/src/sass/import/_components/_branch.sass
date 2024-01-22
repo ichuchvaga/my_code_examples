@@ -1,0 +1,384 @@
+.page--landing
+	.page-heading
+		padding-top: 100px
+		margin-bottom: 0
+		padding-bottom: 70px
+		border-bottom: 1px solid #ccc
+
+	.two-columns-text
+		padding-bottom: 175px
+
+.hero-landing
+	padding-left: calc(50% - 630px)
+
+	&__inner
+		position: relative
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			z-index: 3
+			background: linear-gradient(23.96deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%)
+
+
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			z-index: 2
+			background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%)
+
+	&__bg
+		font-size: 0
+		line-height: 0
+		padding-top: 37.11111111111111%
+		background-repeat: no-repeat
+		background-position: center bottom
+		background-size: cover
+
+	&__content
+		padding: 82px 87px
+		color: #fff
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		z-index: 4
+
+	&__subtitle
+		font-family: $mono
+		font-size: 12px
+		line-height: 1.2em
+		letter-spacing: 0.15em
+		text-transform: uppercase
+		margin-bottom: 20px
+
+	&__title
+		font-weight: 400
+		font-size: 36px
+		line-height: 1em
+
+.two-columns-text
+	.text-big
+		font-size: 24px
+		line-height: 1.7em
+
+.services
+	color: #000
+	min-height: 535px
+
+	& + .projects-gallery-section
+		padding-top: 200px
+
+	&__grey-box
+		background-color: #f5f5f5
+		position: relative
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 50%
+			width: 1px
+			background-color: #ccc
+
+	&__header
+		font-size: 12px
+		line-height: 1.2em
+		letter-spacing: 2px
+		text-transform: uppercase
+		font-family: $mono
+		padding: 35px 90px 36px
+
+	&__content
+		position: relative
+		padding-left: 50%
+
+	&__img
+		position: absolute
+		top: 0
+		left: -90px
+		font-size: 0
+		line-height: 0
+
+	&__list
+		padding-left: 132px
+		padding-right: 132px
+		padding-bottom: 87px
+		font-size: 24px
+		line-height: 1.2em
+		font-weight: 300
+
+		ul
+			list-style: none
+			margin: 0
+			padding: 0
+			counter-reset: list
+
+			li
+				position: relative
+				padding-left: 65px
+				padding-top: 5px
+				margin: 38px 0 0
+				counter-increment: list
+
+				&:first-child
+					margin-top: 0
+
+				&:before
+					content: counter(list)
+					display: block
+					width: 35px
+					height: 35px
+					line-height: 33px
+					border: 1px solid #7B7B7B
+					text-align: center
+					font-family: $pro
+					font-weight: 500
+					font-size: 14px
+					color: #7b7b7b
+					border-radius: 50%
+					position: absolute
+					top: 0
+					left: 0
+
+.discover
+	padding-bottom: 158px
+	//background-color: #fff
+	&__wrapper
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		width: 100%
+		justify-content: space-between
+
+.discover-link
+	display: block
+	width: calc(50% - 20px)
+	background: #F5F5F5
+	border: 1px solid #ccc
+	color: #000
+	text-decoration: none
+	padding: 40px 50px
+	position: relative
+	transition: all .3s ease
+
+	&__text-sm
+		font-family: $mono
+		letter-spacing: 0.15em
+		text-transform: uppercase
+		font-size: 12px
+		line-height: 1.2em
+		display: block
+
+	&__title
+		display: block
+		margin-top: 70px
+		font-weight: normal
+		font-size: 36px
+		line-height: 1em
+		letter-spacing: -0.01em
+
+	&.prev
+		text-align: right
+
+		&:before
+			content: ''
+			display: block
+			width: 120px
+			height: 10px
+			background: transparent url("../img/nav-arrow-l.svg") no-repeat 0 0
+			position: absolute
+			left: 0
+			top: 50%
+			margin-top: -5px
+			transition: all .3s ease
+
+	&.next
+		text-align: left
+		
+		&:before
+			content: ''
+			display: block
+			width: 120px
+			height: 10px
+			background: transparent url("../img/nav-arrow-r.svg") no-repeat 0 0
+			position: absolute
+			right: 0
+			top: 50%
+			margin-top: -5px
+			transition: all .3s ease
+
+	&:hover
+		background-color: lighten(#F5F5F5, 2%)
+
+		&.prev:before
+			left: 10px
+
+		&.next:before
+			right: 10px
+
+.page--landing
+	.projects-gallery-section
+		padding-bottom: 42px
+
+@media screen and (max-width: 1230px)
+	/**/
+	.page--landing .two-columns-text
+		padding-bottom: 100px
+
+	.discover
+		padding-bottom: 100px
+
+	.page--landing .projects-gallery-section
+		padding-bottom: 0
+
+	.discover-link
+		&__title
+			font-size: 30px
+			margin-top: 55px
+
+		&.next
+			&:before
+				background-position: 100% 0
+				width: 64px
+
+		&.prev
+			&:before
+				background-position: 0 0
+				width: 64px
+
+@media screen and (max-width: 1350px)
+	/**/
+	.services
+		&__img
+			max-width: 64%
+
+		&__list
+			font-size: 22px
+
+@media screen and (max-width: 1230px)
+	/**/
+	.services
+		&__img
+			left: -50px
+
+		&__list
+			font-size: 20px
+
+		& + .projects-gallery-section
+			padding-top: 100px
+
+	.page--landing .page-heading
+		padding-top: 60px
+		padding-bottom: 60px
+
+@media screen and (max-width: 1024px)
+	/**/
+	.services
+		&__img
+			left: -15px
+			max-width: calc(64% - 30px)
+	
+@media screen and (max-width: 991px)
+	/**/
+	.two-columns-text
+		.col-12
+			&:nth-child(2)
+				margin-top: 30px
+
+		.text-big
+			font-size: 20px
+
+	.services
+		&__header
+			padding-left: 95px
+
+		&__content
+			padding-left: 0
+			display: flex
+			flex-direction: column
+			justify-content: flex-start
+			align-items: flex-start
+
+		&__img
+			position: static
+			order: 2
+			max-width: 100%
+
+		&__list
+			order: 1
+			padding-left: 30px
+			padding-right: 30px
+			padding-bottom: 54px
+
+		&__grey-box
+			&:before
+				content: unset
+				display: none
+
+@media screen and (max-width: 767px)
+	/**/
+	.two-columns-text
+		padding-top: 52px
+
+	.page--landing .two-columns-text
+		padding-bottom: 35px
+
+	.hero-landing
+		&__bg
+			padding-top: 0
+			height: 300px
+
+		&__content
+			padding-left: 30px
+			padding-right: 30px
+			padding-top: 60px
+			padding-bottom: 60px
+
+	.discover
+		padding-bottom: 60px
+
+		&__wrapper
+			flex-direction: column
+
+	.discover-link
+		padding: 25px 40px
+		width: 100%
+
+		margin-top: 30px
+
+		&:first-child
+			margin-top: 0
+
+		&__title
+			font-size: 26px
+			margin-top: 30px
+	
+	.services
+		& + .projects-gallery-section
+			padding-top: 60px
+
+@media screen and (max-width: 480px)
+	/**/
+	.services
+		&__header
+			padding-left: 80px
+
+		&__list
+			padding-left: 15px
+			padding-right: 15px
+			font-size: 18px
+
+			ul li
+				padding-top: 7px

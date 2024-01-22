@@ -1,0 +1,122 @@
+//- HTML start
+include ../data/portfolio
+include ../data/press
+
+doctype html
+html(lang="en")
+	head
+		include ../partials/head
+
+	body
+		
+
+		.page
+			.vertical-lines.container
+				.vertical-lines__center
+
+			include ../partials/header
+
+			.page-heading
+				.container
+					.page-heading__wrapper
+						.page-heading__l
+							h1 Latest News
+
+						.page-heading__r
+							a(href="javascript:void(0);" class="btn btn-primary btn--with-icon")
+								span.btn__text Sort by
+								span.btn__icon
+									span.icon.icon-scroll-down
+
+
+			.tab-links
+				.container
+					.tab-links__inner
+						a(href="" class="tab-link active") All Categories
+						a(href="" class="tab-link") ARCHITECTURE
+						a(href="" class="tab-link") DEVELOPMENT
+						a(href="" class="tab-link") CONTSRUCTION
+
+			.news
+				.news-grid
+					.container
+						.news-grid__inner
+							each item in news_items
+								.news-item-card
+									a(href="single-article.html").news-item-card__wrapper
+										.news-item-card__img(style="background-image:url('src/img/press/"+item.img+"')")
+										.news-item-card__content
+											.news-item-card__content-main
+												.news-item-card__title #{item.title}
+												.news-item-card__tag #{item.tag}
+
+												.news-item-card__pub-date #{item.date}
+												.news-item-card__intro-text #{item.descr}
+
+											.news-item-card__content-bottom
+												.news-item-card__btn
+													span.btn.btn-outline
+														span.btn__text Read More
+														span.btn__icon
+															span.icon.icon-arrow-right
+
+												.news-item-card__author by 
+													strong #{item.author}
+
+				.view-more
+					.container
+						a(href="javascript:void(0);").view-more-btn.btn.btn-primary.btn--with-icon
+							span.btn__text Load More ARTICLES
+							span.btn__icon.icon-refresh
+
+			
+			.press
+				.page-heading
+					.container
+						.page-heading__wrapper
+							.page-heading__l
+								h2.h1 Press
+
+							.page-heading__r
+								a(href="javascript:void(0);" class="btn btn-primary btn--with-icon")
+									span.btn__text Sort by
+									span.btn__icon
+										span.icon.icon-scroll-down
+
+				.section-content
+					.tab-links
+						.container
+							.tab-links__inner
+								a(href="" class="tab-link active") All Categories
+								a(href="" class="tab-link") ARCHITECTURE
+								a(href="" class="tab-link") DEVELOPMENT
+								a(href="" class="tab-link") CONTSRUCTION
+
+				
+					.press-grid
+						.container
+							.press-grid__inner
+								each item in press_items
+									-
+										var imgUrl = 'src/img/press/' + item.img;
+
+									.news-item-compact
+										.news-item-compact__inner
+											.news-item-compact__img
+												img(src=imgUrl alt="")
+											.news-item-compact__main
+												a(href="single-article.html" class="news-item-compact__link circle-link-black")
+												.news-item-compact__pub-date #{item.date}
+												.news-item-compact__bottom
+													.news-item-compact__title #{item.title}
+													.news-item-compact__tag #{item.tag}
+
+						.view-more
+							.container
+								a(href="javascript:void(0);").view-more-btn.btn.btn-primary.btn--with-icon
+									span.btn__text Load More PRESS
+									span.btn__icon.icon-refresh
+
+
+			include ../partials/footer
+			include ../partials/js

@@ -1,0 +1,103 @@
+.btn-close--custom
+	width: 24px
+	height: 24px
+	background: transparent url("../img/modal-close.svg") no-repeat 0 0
+	opacity: 1
+	padding: 0
+	box-shadow: border-box
+	position: absolute
+	top: 20px
+	right: 20px
+
+.modal-body
+	position: static
+	padding: 0
+
+.modal-content
+	padding: 60px 80px 36px
+
+.modal-title
+	font-weight: normal
+	font-family: $regular
+	font-size: 36px
+	line-height: 1.2em
+	color: #000
+	letter-spacing: -0.01em
+	margin-bottom: 32px
+
+@media (min-width: 576px)
+	.modal-dialog
+		max-width: 750px
+
+.form-bottom
+	display: flex
+	justify-content: space-between
+	align-items: center
+	width: 100%
+
+.modal-contacts
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+	padding: 70px 0 0
+
+	&__title
+		font-family: $mono
+		text-transform: uppercase
+		font-size: 10px
+		line-height: 1.1em
+		margin-bottom: 1em
+
+	&__text
+		font-weight: 500
+		font-size: 14px
+		line-height: 1.1em
+		font-weight: 500
+		color: #4d4d4d
+
+		a
+			color: #4d4d4d
+			text-decoration: none
+
+	&__col
+		&:nth-child(2)
+			padding: 0 30px
+
+@media (min-width: 576px)
+	#modal-success
+		.modal-dialog
+			max-width: 480px
+
+@media screen and (max-width: 767px)
+	/**/
+	.modal-content
+		padding-left: 30px
+		padding-right: 30px
+		padding-top: 30px
+
+	.form-bottom
+		display: block
+
+	.modal
+		.form-submit
+			margin-top: 30px
+
+	.modal-contacts
+		display: none
+
+		&__col
+			margin-left: 0
+			margin-top: 24px
+
+			&:first-child
+				margin-top: 0
+
+			&:nth-child(2)
+				padding-left: 0
+				padding-right: 0
+
+@media screen and (max-width: 480px)
+	/**/
+	.modal-content
+		padding-left: 15px
+		padding-right: 15px

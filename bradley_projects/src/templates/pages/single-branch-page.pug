@@ -1,0 +1,117 @@
+//- HTML start
+include ../data/portfolio
+
+doctype html
+html(lang="en")
+	head
+		include ../partials/head
+
+	body
+		
+
+		.page.page--landing
+			.vertical-lines.container
+				.vertical-lines__center
+
+			include ../partials/header
+			
+			.page-heading
+				.container
+					.branch-logo
+						img(src="src/img/landing/TBP-Logo.png" alt="")
+
+
+			.hero-landing
+				.hero-landing__inner
+					.hero-landing__bg.parallax-window(data-parallax="scroll" data-image-src="src/img/landing/tbp-banner.jpg" data-z-index="inherit")
+					.hero-landing__content
+						.hero-landing__subtitle THE BRADLEY Projects
+						.hero-landing__title Architecture
+
+			.two-columns-text
+				.container
+					.row
+						.col-12.col-sm-12.col-md-12.col-lg-6
+							p.text-big The Bradley Development Group began in San Diego, California focused primarily on public-private, mass-transit real estate developments across Southern California.
+						.col-12.col-sm-12.col-md-12.col-lg-6
+							p Led by architect-developer Jared Bradley, AIA, NCARB, the company pursues urban infill projects with an approach to development that encourages a mix of building types and uses, diverse housing and transportation, development within existing neighborhoods, and community engagement. Being architect-developer led, The Bradley Development group brings expertise deeply rooted in efficient, smarter-growth, high-yield developments.
+
+			.services
+				.container
+					.services__grey-box
+						.services__header Capabilities &amp; Services
+						.services__content
+							.services__img.parallax-window(data-parallax="scroll" data-image-src='src/img/landing/services.jpg' data-z-index="2")
+								img(src="src/img/landing/services.jpg" alt="")
+							.services__list
+								ul
+									li Acquisition &amp; Planning.
+									li Equity &amp; Financing.
+									li Architectural &amp; Engineering.
+									li Construction Management.
+									li Asset Delivery.
+
+			-
+				var recent_projects = [
+					{
+						img: "src/img/single-project/recent-project-01.jpg",
+						title: "Fairfax Flats",
+						loc: "Los Angeles, CA",
+						tag: "CONSTRUCTION"
+					},
+					{
+						img: "src/img/single-project/recent-project-02.jpg",
+						title: "Main 608",
+						loc: "Austin",
+						tag: ["Architecture", "CONSTRUCTION", "DEVELOPMENT"]
+					}
+				];
+			.section.projects-gallery-section
+				.container
+					.section-heading.section-heading--with-arrow
+						.section-heading__l
+							.h2 Related Projects
+						.section-heading__r
+							a(href="#" class="btn btn-primary btn--with-icon")
+								span.btn__text Development Projects
+								span.btn__icon
+									span.icon.icon-arrow-right
+
+				.section-content
+					.projects-gallery
+						.projects-gallery__slides
+							// Slider main container
+							.swiper.js-gallery-slider
+								// Additional required wrapper
+								.swiper-wrapper
+									// Slides
+									each item in recent_projects
+										.swiper-slide
+											.projects-gallery-card
+												.projects-gallery-card__wrapper
+													img(src=item.img alt="")
+													.projects-gallery-card__content
+														.projects-gallery-card__title #{item.title}
+														.projects-gallery-card__location #{item.loc}
+														.projects-gallery-card__tag #{item.tag}
+
+													a(href="#" title="Go To Project").projects-gallery-card__link
+
+								.swiper-scrollbar
+
+			//- Bottom links
+			.discover
+				.container
+					.discover__wrapper
+						a(href="#").discover-link.prev
+							span.discover-link__text-sm Discover
+							span.discover-link__title Construction
+
+						a(href="#").discover-link.next
+							span.discover-link__text-sm Discover
+							span.discover-link__title Development
+
+
+
+			include ../partials/footer
+			include ../partials/js

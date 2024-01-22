@@ -1,0 +1,27 @@
+.view-more
+	// border-bottom: 1px solid #ccc
+	position: relative
+	text-align: center
+	font-size: 0
+	line-height: 0
+	margin-top: 75px
+
+	&:before
+		content: ''
+		display: block
+		height: 1px
+		background-color: #ccc
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		z-index: 1
+
+	.container
+		position: relative
+		z-index: 2
+
+@media screen and (max-width: 767px)
+	/**/
+	.view-more
+		margin-top: 45px

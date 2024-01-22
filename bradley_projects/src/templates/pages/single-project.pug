@@ -1,0 +1,172 @@
+//- HTML start
+include ../data/project
+-
+	var lightbox = true;
+
+doctype html
+html(lang="en")
+	head
+		include ../partials/head
+
+	body
+		
+
+		.page
+			.vertical-lines.container
+				.vertical-lines__center
+
+			include ../partials/header
+
+			.page-heading
+				.container
+					.page-heading__wrapper
+						.page-heading__l
+							h1 Linden Row
+
+						.page-heading__r
+							a(href="javascript:void(0);" class="btn btn-primary btn--with-icon js-scroll-to")
+								span.btn__text LEARN MORE
+								span.btn__icon
+									span.icon.icon-scroll-down
+
+			//- Photos
+			.photos
+				.photos__wrapper
+					.container
+						.photos__inner
+							.project-services
+								.project-services__title Project Services:
+								.project-services__list
+									a(href="#" class="project-service") Architecture
+									a(href="#" class="project-service") Development
+
+							.photos__carousel
+								.swiper.js-photos-carousel
+									// Additional required wrapper
+									.swiper-wrapper
+										each item in photos
+											-
+												var imgUrl = 'src/img/single-project/photos/' + item.img;
+											.swiper-slide
+												.photo-slide
+													img(src=imgUrl alt="")
+													a(href=imgUrl class="zoom-icon")
+
+									.swiper-pagination
+
+				.thumbs
+					.container
+						.thumbs__wrapper
+							.thumbs__carousel
+								// Slider main container
+								.swiper.js-thumbs-carousel
+									// Additional required wrapper
+									.swiper-wrapper
+										each item in photos
+											-
+												var imgUrl = 'src/img/single-project/photos/' + item.thumb;
+											.swiper-slide
+												.photo-thumb
+													img(src=imgUrl alt="")
+
+									.swiper-button-prev
+									.swiper-button-next
+
+			//- Summary
+			.project-summary
+				.project-summary__wrapper
+					.project-summary__l
+						.section-heading.section-heading--with-arrow
+							.section-heading__l
+								.h2 Project Summary
+
+						.project-summary__text
+							p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+							p Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+							p Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
+
+					.project-summary__r
+						.summary-list-container
+							-
+								var items = [
+									{
+										cap: "Project",
+										val: "Linden Row"
+									},
+									{
+										cap: "Service",
+										val: "Architecture, Development"
+									},
+									{
+										cap: "Size",
+										val: "140,000 sq. ft."
+									},
+									{
+										cap: "Location",
+										val: "Green Hills"
+									},
+									{
+										cap: "Complete",
+										val: "2020"
+									},
+									{
+										cap: "Typology",
+										val: "High Density Residential"
+									}
+								];
+							.summary-list
+								each item in items
+									.summary-list-item
+										.summary-list-item__caption #{item.cap}
+										.summary-list-item__value #{item.val}
+
+			-
+				var recent_projects = [
+					{
+						img: "src/img/single-project/recent-project-01.jpg",
+						title: "Fairfax Flats",
+						loc: "Los Angeles, CA",
+						tag: "CONSTRUCTION"
+					},
+					{
+						img: "src/img/single-project/recent-project-02.jpg",
+						title: "Main 608",
+						loc: "Austin",
+						tag: ["Architecture", "CONSTRUCTION", "DEVELOPMENT"]
+					}
+				];
+			.section.projects-gallery-section
+				.container
+					.section-heading.section-heading--with-arrow
+						.section-heading__l
+							.h2 You might be also interested
+						.section-heading__r
+							a(href="#" class="btn btn-primary btn--with-icon")
+								span.btn__text Similar Projects
+								span.btn__icon
+									span.icon.icon-arrow-right
+
+				.section-content
+					.projects-gallery
+						.projects-gallery__slides
+							// Slider main container
+							.swiper.js-gallery-slider
+								// Additional required wrapper
+								.swiper-wrapper
+									// Slides
+									each item in recent_projects
+										.swiper-slide
+											.projects-gallery-card
+												.projects-gallery-card__wrapper
+													img(src=item.img alt="")
+													.projects-gallery-card__content
+														.projects-gallery-card__title #{item.title}
+														.projects-gallery-card__location #{item.loc}
+														.projects-gallery-card__tag #{item.tag}
+
+													a(href="#" title="Go To Project").projects-gallery-card__link
+
+								.swiper-scrollbar
+
+			include ../partials/footer
+			include ../partials/js

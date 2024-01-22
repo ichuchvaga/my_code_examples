@@ -1,0 +1,23 @@
+mixin textarea(obj)
+	-
+		var input_value = ""; if (obj.value) input_value = obj.value;
+		var input_ph = ""; if (obj.placeholder) input_ph = obj.placeholder;
+		var input_name = ""; if (obj.name) input_name = obj.name;
+		var input_class = ""; if (obj.className) input_class = obj.className;
+		var input_label = ""; if (obj.label) input_label = obj.label;
+
+		var input_required = obj.required || false;
+		var requiredClass = "";
+		if (input_required) requiredClass = "required";
+
+		var input_classes = [input_class, requiredClass].join(" ");
+		var input_id = ""; if (obj.id) input_id = obj.id;
+
+	.form-group(class=requiredClass)
+		label(for=input_id) !{input_label}
+		textarea(
+			class="form-control" + input_classes
+			placeholder=input_ph
+			name=input_name
+			id=input_id
+		) #{input_value}

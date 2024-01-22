@@ -1,0 +1,114 @@
+//- HTML start
+include ../data/portfolio
+
+doctype html
+html(lang="en")
+	head
+		include ../partials/head
+
+	body
+		
+
+		.page
+			.vertical-lines.container
+				.vertical-lines__center
+
+			include ../partials/header
+
+			.page-heading
+				.container
+					.page-heading__wrapper
+						.page-heading__l
+							h1 Project Portfolio
+
+						.page-heading__r
+							a(href="javascript:void(0);" class="btn btn-primary btn--with-icon js-scroll-to")
+								span.btn__text Location map
+								span.btn__icon
+									span.icon.icon-scroll-down
+
+
+			.tab-links
+				.container
+					.tab-links__inner
+						a(href="" class="tab-link active") All Categories
+						a(href="" class="tab-link") ARCHITECTURE
+						a(href="" class="tab-link") DEVELOPMENT
+						a(href="" class="tab-link") CONTSRUCTION
+
+			//- Portfolio Grid
+			.portfolio
+				.portfolio-grid
+					.container
+						.portfolio-grid__inner
+							each item in portfolio_items
+								.projects-gallery-card
+									.projects-gallery-card__wrapper
+										.projects-gallery-card__img(style="background-image:url('"+item.img+"')")
+										.projects-gallery-card__content
+											.projects-gallery-card__title #{item.title}
+											.projects-gallery-card__location #{item.loc}
+											.projects-gallery-card__tag #{item.tag}
+
+										a(href="#" title="Go To Project").projects-gallery-card__link
+
+				.view-more
+					.container
+						a(href="javascript:void(0);").view-more-btn.btn.btn-primary.btn--with-icon
+							span.btn__text Load More Projects
+							span.btn__icon.icon-refresh
+			//- Location Map
+			.location
+				.container
+					.section-heading.section-heading--with-arrow
+						.section-heading__l
+							.h2 Location Map
+						.section-heading__r <p>Discover our best projects with interective map</p>
+						
+					.location-map
+						.map-projects-info
+							.map-project.js-map-project(data-id="0")
+								.map-project__top Selected Project
+								.map-project__img
+									img(src="src/img/map/project-img.jpg" alt="")
+
+								.map-project__main
+									.map-project__title Linden Row
+									.map-project__location Green Hills
+									.map-project__tags
+										span.map-project__tag Architecture
+									.map-project__description Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.Donec nec justo eget felis facilisis...
+									.map-project__btn
+										a(href="projects.html" class="btn btn-primary btn--with-icon")
+											span.btn__text LEARN MORE
+											span.btn__icon
+												span.icon.icon-arrow-right
+
+							.map-project.js-map-project(data-id="1")
+								.map-project__top Selected Project
+								.map-project__img
+									img(src="src/img/map/project-img2.jpg" alt="")
+
+								.map-project__main
+									.map-project__title Fairfax Flats
+									.map-project__location Green Hills
+									.map-project__tags
+										span.map-project__tag Architecture
+									.map-project__description Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.Donec nec justo eget felis facilisis...
+									.map-project__btn
+										a(href="projects.html" class="btn btn-primary btn--with-icon")
+											span.btn__text LEARN MORE
+											span.btn__icon
+												span.icon.icon-arrow-right
+
+						// The div element for the map
+						#map
+						// Async script executes immediately and must be after any DOM elements used in callback.
+						//-script(src="https://polyfill.io/v3/polyfill.min.js?features=default")
+						script(src="src/js/map.js")
+						script(src="src/js/libs/maps/markerclusterer/index.min.js")
+						script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBChGJH2CKaeoEIiuJ8SYCrv2w6LAvzEvA&callback=initMap")
+						
+
+			include ../partials/footer
+			include ../partials/js

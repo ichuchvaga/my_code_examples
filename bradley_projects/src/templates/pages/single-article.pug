@@ -1,0 +1,146 @@
+//- HTML start
+include ../data/portfolio
+include ../data/article
+
+doctype html
+html(lang="en")
+	head
+		include ../partials/head
+
+	body
+		
+
+		.page
+			.vertical-lines.container
+				//-.vertical-lines__center
+
+			include ../partials/header
+
+			.page-heading
+				.container
+					.page-heading__wrapper
+						.page-heading__l
+							h1 The Retraining of SLC
+
+						.page-heading__r
+							.article-author #[span by] Kate Horward
+							.article-pub-date Sep 21, 2021
+
+			.hero-article.parallax-window(data-parallax="scroll" data-image-src='src/img/single-article/hero.jpg' data-z-index="inherit")
+				img(src="src/img/single-article/hero.jpg" alt="")
+
+			.article-text
+				.container
+					.article-text__inner
+						h2 The Retraining of SLC
+
+						p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+
+						p Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+
+						p Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
+
+						p Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+
+						p Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.
+
+						p.img.parallax-window(data-parallax="scroll" data-image-src='src/img/single-article/img1.jpg' data-z-index="inherit")
+							img(src="src/img/single-article/img1.jpg" alt="")
+
+						h2 Art in Architecture
+
+						p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<br> Donec nec justo eget felis facilisis fermentum. <strong><span style="text-decoration: underline;">Aliquam porttitor mauris</span></strong> sit amet orci. Aenean dignissim pellentesque felis.
+						
+						p Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.<br> Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+
+						blockquote
+							p “Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+
+						h2 Designing for the Soul
+
+						p Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
+						
+						p Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+						
+						p Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.
+
+						.cta-button
+							a(href="#" class="btn btn-primary btn--with-icon")
+								span.btn__text СTA BUTTON
+								span.btn__icon
+									span.icon.icon-arrow-right
+
+						p.img.parallax-window(data-parallax="scroll" data-image-src='src/img/single-article/img2.jpg' data-z-index="inherit")
+							img(src="src/img/single-article/img2.jpg" alt="")
+
+						h2 Art in Architecture
+						p Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
+			
+			.share
+				.container
+					.share__title Share
+					.share__links
+						a(href="#" class="share-link")
+							span.icon.icon-share-linkedin
+
+						a(href="#" class="share-link")
+							span.icon.icon-share-twitter
+
+						a(href="#" class="share-link")
+							span.icon.icon-share-facebook
+
+			.similar-articles.section
+				.container
+					.section-heading.section-heading--with-arrow
+						.section-heading__l
+							.h2 You might be also intrested
+
+						.section-heading__r
+							a(href="#" class="btn btn-primary btn--with-icon")
+								span.btn__text Similar ARTICLES
+								span.btn__icon
+									span.icon.icon-arrow-right
+
+					.section-content
+						.news-grid
+							.news-grid__inner
+								each item in news_items
+									.news-item-card
+										a(href="#").news-item-card__wrapper
+											.news-item-card__img(style="background-image:url('src/img/press/"+item.img+"')")
+											.news-item-card__content
+												.news-item-card__content-main
+													.news-item-card__title #{item.title}
+													.news-item-card__tag #{item.tag}
+
+													.news-item-card__pub-date #{item.date}
+													.news-item-card__intro-text #{item.descr}
+
+												.news-item-card__content-bottom
+													.news-item-card__btn
+														span.btn.btn-outline
+															span.btn__text Read More
+															span.btn__icon
+																span.icon.icon-arrow-right
+
+													.news-item-card__author by 
+														strong #{item.author}
+				
+			.subscription
+				.container
+					form.subscription-form
+						.subscription-form__title Get Our News Updates!
+						.subscription-field
+							.subscription-field__input
+								input(type="email" class="form-control" placeholder="Enter your e-mail address" required)
+							.subscription-field__btn
+								input(type="submit")
+
+						.form-agreement
+							label.checkbox-field
+								input(type="checkbox" name="agree" value="yes")
+								span.checkbox-field__icon
+								span.checkbox-field__text By clicking this tiny box, you agree to our <a href="#" class="js-agreement-text-link">Website Terms of Use</a>
+
+			include ../partials/footer
+			include ../partials/js

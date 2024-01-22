@@ -1,0 +1,153 @@
+.capabilities
+	& + .projects-gallery-section
+		padding-top: 79px
+	
+.capabilities-grid
+	position: relative
+
+	.row
+		margin-top: -1px
+		margin-left: -8px
+		margin-right: -7px
+
+	&__line1
+		display: block
+		height: 1px
+		background-color: #ccc
+		position: absolute
+		top: 169px
+		left: 0
+		right: 0
+
+	&__line2
+		display: block
+		height: 1px
+		background-color: #ccc
+		position: absolute
+		top: 185px
+		left: 0
+		right: 0
+	
+	&__line3
+		display: block
+		height: 1px
+		background-color: #ccc
+		position: absolute
+		bottom: 15px
+		left: 0
+		right: 0
+
+	&__line4
+		display: block
+		width: 1px
+		height: 15px
+		background-color: #ccc
+		position: absolute
+		bottom: -16px
+		right: -1px
+
+	&__line5
+		display: block
+		width: 1px
+		height: 15px
+		background-color: #ccc
+		position: absolute
+		bottom: -16px
+		left: -1px
+
+	&__line6
+		display: block
+		width: 1px
+		height: 15px
+		background-color: #ccc
+		position: absolute
+		bottom: -16px
+		right: -1px
+
+	&__line7
+		display: block
+		width: 1px
+		height: 15px
+		background-color: #ccc
+		position: absolute
+		bottom: -16px
+		left: -1px
+
+.capabilities-item
+	padding-left: 8px
+	padding-right: 7px
+	padding-bottom: 15px
+
+	&__wrapper
+		height: 170px
+		background-color: #F5F5F5
+		position: relative
+		padding-left: 30px
+		padding-bottom: 30px
+		padding-right: 145px
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+		align-content: flex-start
+		border: 1px solid #d2d2d2
+
+	&__number
+		display: inline-block
+		vertical-align: baseline
+		font-size: 0
+		line-height: 0
+		position: absolute
+		right: 30px
+		bottom: 0
+
+		.img-default
+			opacity: 1
+			transition: opacity .3s ease
+
+		.img-active
+			transition: opacity .3s ease
+			position: absolute
+			top: 0
+			left: 0
+			opacity: 0
+			z-index: 2
+
+	&:nth-child(4)
+		.capabilities-item
+			&__number
+				right: 13px
+
+	&__text
+		font-weight: 300
+		font-size: 20px
+		line-height: 1.2em
+		color: #000
+
+.capabilities-item--text-only
+	.capabilities-item__wrapper
+		justify-content: center
+		padding-bottom: 0
+		background-color: #fff
+
+.capabilities-item:hover
+	.capabilities-item__number
+		.img-default
+			opacity: 0
+		.img-active
+			opacity: 1
+
+@media screen and (max-width: 1230px)
+	/**/
+	.capabilities-item
+		&__wrapper
+			padding-right: 105px
+
+		&__text
+			// font-size: 18px
+
+		&__number
+			img
+				height: 100px
+
+	.capabilities-item--text-only .capabilities-item__wrapper
+		padding-right: 30px

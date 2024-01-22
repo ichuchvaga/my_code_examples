@@ -1,0 +1,158 @@
+.photos
+	margin-bottom: 200px
+	
+	&__wrapper
+		background-color: #f7f7f7
+		padding-top: 55px
+		border-style: solid
+		border-width: 1px 0 1px 0
+		border-color: #ccc
+	
+.photo-thumb
+	width: 50px
+	padding: 0
+	position: relative
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: rgba(0,0,0,0)
+		border: 2px solid transparent
+		transition: opacity .3s ease
+
+.swiper-slide-thumb-active
+	.photo-thumb
+		&:before
+			opacity: 1
+			border-color: #000
+			background: rgba(0,0,0,0.3)
+
+.thumbs
+	border-bottom: 1px solid #ccc
+	padding-top: 20px
+	padding-bottom: 20px
+
+	&__carousel
+		.swiper-slide
+			width: 50px
+			font-size: 0
+			line-height: 0
+
+		.swiper
+			width: 100%
+			height: 100%
+			padding-top: 5px
+			padding-bottom: 5px
+			padding-left: 80px
+			padding-right: 80px
+
+		.swiper-wrapper
+			justify-content: center
+
+		.swiper-button-next,
+		.swiper-button-prev
+			width: 60px
+			height: 60px
+			margin-top: -30px
+
+		.swiper-button-prev:after,
+		.swiper-rtl .swiper-button-next:after
+			content: ''
+			background: transparent url("../img/icon-photo-nav-left.svg") no-repeat 0 0
+			width: 60px
+			height: 60px
+
+		.swiper-button-next:after,
+		.swiper-rtl .swiper-button-prev:after
+			content: ''
+			background: transparent url("../img/icon-photo-nav-right.svg") no-repeat 0 0
+			width: 60px
+			height: 60px
+
+.swiper-pagination-fraction
+	font-family: $pro
+	font-size: 16px
+	font-weight: 500
+	line-height: 1.2em
+	letter-spacing: 0.15em
+	text-transform: uppercase
+	color: #fff
+	bottom: 50px
+
+.photo-slide
+	position: relative
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%)
+		opacity: 0.5
+		z-index: 3
+
+	img
+		position: relative
+		z-index: 2
+
+.zoom-icon
+	display: block
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	background: #fff url("../img/icon-zoom.svg") no-repeat 0 0
+	opacity: 1
+	transition: opacity .3s ease
+	
+	&:hover
+		opacity: 0.7
+
+.photo-slide .zoom-icon
+	position: absolute
+	z-index: 4
+	top: 40px
+	right: 40px
+
+@media screen and (max-width: 1230px)
+	/**/
+	.photos
+		margin-bottom: 100px
+
+@media screen and (max-width: 767px)
+	/**/
+	.photos
+		margin-bottom: 60px
+		
+	.photo-slide
+		.zoom-icon
+			width: 40px
+			height: 40px
+			top: 20px
+			right: 20px
+			background-size: contain
+
+	.swiper-pagination-fraction
+		bottom: 30px
+
+	.thumbs
+		&__carousel
+			.swiper-button-prev,
+			.swiper-button-next
+				display: none
+
+			.swiper
+				padding-left: 0
+				padding-right: 0
+
+			.swiper-wrapper
+				justify-content: flex-start
+
+	.swiper-pagination-fraction
+		bottom: 10px

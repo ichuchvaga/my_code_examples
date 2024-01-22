@@ -1,0 +1,72 @@
+//- header.pug
+
+include ../data/header
+
+header.header
+    .container
+        .header__wrapper
+            .header-main__logo
+                a(href="index.html" class="logo logo-header")
+                    img(src="src/img/logo.svg" alt="")
+
+                    span.header-company-logos-wrapper
+                        span.header-company-logos
+                            img.header-company-logo(src="src/img/top-logos/TBP-Logo.png" alt="The Bradley Projects")
+                            img.header-company-logo(src="src/img/top-logos/BDG-Logo.png" alt="Brandley Development Group")
+                            img.header-company-logo(src="src/img/top-logos/Certified-Logo.png" alt="Certified Construction Services")
+
+
+            nav(class="navbar navbar-light header-nav")
+                button(class="navbar-toggler js-menu")
+                    span(class="navbar-toggler-icon")
+
+                div(class="navbar-collapse collapse" id="menuContent" style="")
+                    ul(class="navbar-nav mr-auto")
+                        each item in menu
+                            li(class="nav-item")
+                                a(href="javascript:void(0);" class="header-nav__link nav-link") #{item.title}
+                        li(class="nav-item")
+                            a(href="#get-in-touch" class="header-get-in-touch-btn") Get In Touch
+
+.menu
+    .menu-wrapper
+        .menu-top
+            .container
+                .v-line-left
+                .v-line-right
+                .menu-top__wrapper
+                    .menu-top__logo
+                        a(href="index.html" class="logo")
+                            img(src="src/img/logo.svg" alt="")
+                            
+                    .menu-top__close
+                        a(href="javascript:void(0);" class="menu-close-btn js-menu-close")
+
+        .menu-content
+            .container
+                .v-line-left
+                .v-line-right
+                ul.menu-items
+                    each item in menu
+                        li
+                            a(href=item.url class="menu-link")
+                                span.menu-link__text #{item.title}
+                                span.menu-link__icon
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.5 8.66" width="7.5" height="8.66"><polygon points="7.5 4.33 0 0 0 8.66 7.5 4.33"/></svg>
+                .menu-bottom
+                    .menu-contacts
+                        .menu-contacts__group
+                            .menu-contacts__caption E-mail
+                            .menu-contacts__content
+                                a(href="mailto:contact@thebpi.com") contact@thebpi.com
+
+                        .menu-contacts__group
+                            .menu-contacts__caption Phone
+                            .menu-contacts__content
+                                a(href="mailto:+1 619-319-2242") +1 619-319-2242
+
+                    .menu-bottom__btn
+                        a(href="javascript:void(0);" class="btn btn-primary btn--with-icon" data-bs-toggle="modal" data-bs-target="#modal-contact")
+                            span.btn__text Contact Form
+                            span.btn__icon
+                                span.icon.icon-arrow-right

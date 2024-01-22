@@ -1,0 +1,266 @@
+.menu
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 100
+	background-color: #fff
+	// display: none
+	display: none
+	overflow: hidden
+	
+	.container
+		position: relative
+
+.menu-top
+	border-bottom: 1px solid #ccc
+	overflow: hidden
+
+	&__wrapper
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		width: 100%
+		justify-content: space-between
+		padding-top: 24px
+		padding-bottom: 26px
+
+.menu-close-btn
+	display: block
+	width: 50px
+	height: 50px
+	background: transparent url("../img/menu-close.svg") no-repeat 0 0
+	position: relative
+	z-index: 101
+
+	&:after
+		content: ''
+		display: block
+		height: 1px
+		background-color: #000
+		width: 2000px
+		position: absolute
+		top: 50%
+		left: 100%
+		//transform: translateY(-50%)
+
+.menu-content
+	.container
+		padding-bottom: 65px
+
+.menu-items
+	margin: 0 0 0 -90px
+	text-align: center
+	counter-reset: menuIndex
+
+.menu-link
+	display: block
+	padding: 50px 90px
+	background-color: #fff
+	color: #545454
+	text-decoration: none
+	font-weight: 300
+	font-size: 36px
+	line-height: 1em
+	border-bottom: 1px solid #ccc
+	position: relative
+	counter-increment: menuIndex
+
+	&:before
+		content: counter(menuIndex)
+		display: inline-block
+		vertical-align: baseline
+		font-family: $pro
+		font-weight: 500
+		font-size: 12px
+		line-height: 1em
+		color: #808080
+		width: 26px
+		height: 26px
+		line-height: 24px
+		border: 1px solid #808080
+		border-radius: 50%
+		text-align: center
+		position: absolute
+		top: 50%
+		margin-top: -13px
+		left: 91px
+
+	&__icon
+		display: block
+		width: 85px
+		position: absolute
+		top: 50%
+		right: 0
+		height: 2px
+		background-color: #9f9f9f
+		transition: all .3s ease
+
+		svg
+			fill: #9f9f9f
+			height: 10px
+			position: absolute
+			top: 50%
+			margin-top: -5px
+			right: 0
+			transition: all .3s ease
+
+
+	&:hover
+		color: #000
+		border-color: #c6c6c6
+		background-color: #F7F7F7
+
+		&:before
+			color: #000
+			border-color: #000
+
+		.menu-link
+			&__icon
+				width: 170px
+				background-color: #000
+				svg
+					fill: #000
+
+.menu-bottom
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	width: 100%
+	justify-content: space-between
+	align-items: flex-end
+	padding-top: 62px
+
+.menu-contacts
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: flex-start
+	align-items: flex-end
+
+	&__group
+		margin-left: 99px
+		&:first-child
+			margin-left: 0
+
+	&__caption
+		font-family: $mono
+		text-transform: uppercase
+		font-size: 10px
+		line-height: 1.1em
+		letter-spacing: 0.15em
+		color: #4d4d4d
+		font-weight: normal
+		margin-bottom: 1em
+
+	&__content
+		color: #000
+		font-size: 20px
+		line-height: 1.1em
+		font-weight: normal
+
+		a
+			text-decoration: none
+			color: #000
+
+			&:hover
+				color: lighten(#000, 30%)
+
+.menu-wrapper
+	height: 100%
+	overflow-y: auto
+	position: relative
+
+body.locked
+	overflow: hidden
+
+.v-line-left
+	display: block
+	width: 1px
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 90px
+	background-color: #ccc
+	z-index: 1
+
+.v-line-right
+	display: block
+	width: 1px
+	position: absolute
+	top: 0
+	bottom: 0
+	right: 90px
+	background-color: #ccc
+	z-index: 1
+
+.navbar-toggler:focus
+	box-shadow: none
+
+@media screen and (max-width: 1230px)
+	/**/
+	.v-line-left
+		left: 50px
+
+	.v-line-right
+		right: 50px
+
+	.menu-link
+		padding: 30px 50px
+		font-size: 30px
+
+		&:before
+			left: 51px
+
+	.menu-items
+		margin-left: -50px
+
+@media screen and (max-width: 1024px)
+	/**/
+	.menu-top
+		&__wrapper
+			padding-top: 15px
+			padding-bottom: 15px
+
+	.menu-close-btn
+		width: 40px
+		height: 40px
+		background-size: contain
+
+	.v-line-left
+		left: 15px
+
+	.v-line-right
+		right: 15px
+
+	.menu-link
+		&__icon
+			width: 50px
+
+		&:hover
+			.menu-link
+				&__icon
+					width: 80px
+
+	.menu-bottom
+		display: block
+
+		&__btn
+			margin-top: 40px
+					
+@media screen and (max-width: 767px)
+	/**/
+	.menu-link
+		padding: 24px 50px
+		font-size: 24px
+
+	.menu-contacts
+		display: block
+
+		&__group
+			margin-left: 0
+			margin-top: 30px
+
+			&:first-child
+				margin-top: 0

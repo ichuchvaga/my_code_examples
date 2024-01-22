@@ -1,0 +1,209 @@
+/**
+ * Header styles
+ */
+.header
+	color: #fff
+	padding-top: 24px
+	padding-bottom: 26px
+	border-bottom: 1px solid #ccc
+	position: relative
+	
+	&:after
+		content: ''
+		display: block
+		width: 50%
+		position: absolute
+		left: 50%
+		top: 0
+		bottom: 0
+		z-index: 0
+		background-color: #F7F7F7
+		border-left: 1px solid #ccc
+
+	&__wrapper
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		width: 100%
+		justify-content: space-between
+
+.logo
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: flex-start
+	align-content: center
+	font-size: 0
+	line-height: 0
+	flex-shrink: 0
+
+	img
+		height: 50px
+		width: auto
+
+.header-nav
+	font-size: 0
+	font-weight: bold
+	padding-right: 0
+	padding-top: 0
+	padding-bottom: 0
+
+	ul
+		li
+			display: inline-block
+			vertical-align: baseline
+			margin: 0 15px
+
+	&__link
+		font-size: 16px
+		line-height: 1.25em
+		color: $text-primary
+		text-decoration: none
+		display: inline-block
+		vertical-align: baseline
+		transition: all .3s
+		opacity: 0.7
+
+		&:hover,
+		&:active,
+		&:focus,
+		&.active
+			text-decoration: none
+			color: $text-primary
+			opacity: 1
+
+		&.active
+			cursor: default
+
+.navbar-light
+	.navbar-toggler
+		border: none
+		padding: 0
+		width: 50px
+		font-size: 0
+		line-height: 0
+		position: relative
+		z-index: 1
+
+		&:after
+			content: ''
+			display: block
+			height: 1px
+			background-color: #000
+			position: absolute
+			top: 25px
+			left: 0
+			right: -2000px
+			z-index: 2
+
+	.navbar-toggler-icon
+		width: 50px
+		height: 50px
+		background: transparent url("../img/nav-btn.svg") no-repeat 0 0
+		position: relative
+		z-index: 3
+
+.header-company-logos-wrapper
+	display: block
+	overflow: hidden
+
+.header-company-logos
+	font-size: 0
+	line-height: 0
+	transform: translateX(-100%)
+	display: block
+	transition: all .5s ease
+
+.header-company-logo
+	margin-left: 40px
+	display: inline-block
+	vertical-align: top
+
+.logo-header
+	position: relative
+
+	img
+		transition: opacity .5s ease
+		
+	&:after
+		content: ''
+		display: block
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100 */
+		background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+		width: 50px
+		height: 50px
+		position: absolute
+		left: 50px
+		top: 0
+
+		
+	&:hover
+		& > img
+			opacity: 0.5
+
+		.header-company-logos
+			transform: translateX(0)
+
+@media screen and (max-width: 1230px)
+	/**/
+	.header-company-logos-wrapper
+		position: relative
+		z-index: 10
+
+@media screen and (max-width: 1024px)
+	/**/
+	.navbar-collapse
+		position: absolute
+		width: 240px
+		top: 100%
+		right: 0
+		z-index: 10
+		
+		background-color: #f8f9fa
+
+	.header-company-logos-wrapper
+		padding-top: 5px
+
+	.logo img.header-company-logo
+		height: 30px
+
+	.navbar-light .navbar-toggler
+		&:focus
+			outline: none
+			border-color: $red
+
+	.header-nav
+		padding: 0
+		margin-right: 0
+
+	.navbar-nav
+		padding: 10px 10px 20px
+
+	.header
+		padding-top: 15px
+		padding-bottom: 15px
+
+	
+
+@media screen and (max-width: 767px)
+	/**/
+	.logo img
+		height: 40px
+
+	.header-company-logos-wrapper
+		display: none
+
+	.navbar-light
+		.navbar-toggler-icon
+			width: 40px
+			height: 40px
+			background-size: contain
+
+		.navbar-toggler
+			width: 40px
+			
+			&:after
+				top: 20px

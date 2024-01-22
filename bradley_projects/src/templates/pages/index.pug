@@ -1,0 +1,189 @@
+//- HTML start
+
+doctype html
+html(lang="en")
+	head
+		include ../partials/head
+
+	body
+		.page
+			.vertical-lines.container
+				.vertical-lines__center
+
+			include ../partials/header
+
+			.hero-parallax-mirror(style="font-size: 0; line-height: 0;")
+			.hero.js-hero
+				.container
+					.hero-wrapper
+						.hero-nav
+							.hero-nav__title NASHVILLE URBAN DESIGN
+							.hero-nav__companies
+								a(href="javascript:void(0);" data-id="0").hero-nav__company-link.js-hero-nav-link.active Architecture.
+								a(href="javascript:void(0);" data-id="1").hero-nav__company-link.js-hero-nav-link Development.
+								a(href="javascript:void(0);" data-id="2").hero-nav__company-link.js-hero-nav-link Construction.
+
+							.hero-nav__scroll Scroll to find out more
+
+						.hero-view
+							//-.hero-view-item.active(style="background-image: url('src/img/home/hero-architecture.jpg')" data-id="0")
+							.hero-view-item.parallax-window.active(data-parallax="scroll" data-image-src='src/img/home/hero-architecture.jpg' data-z-index="inherit" data-mirror-container=".hero-parallax-mirror" data-id="0")
+								.hero-view-icon(style="background-image: url('src/img/home/hero-leaf-1.svg')")
+
+								.hero-view-item__text
+									.hero-view-item__left
+										.hero-view-item__small-text THE BRADLEY PROJECTS
+										.hero-view-item__title Architecture
+
+									.hero-view-item__right
+										a(href="projects.html" class="btn btn-inverse btn--with-icon")
+											span.btn__text See Projects
+											span.btn__icon
+												span.icon.icon-arrow-right
+
+							//-.hero-view-item(style="background-image: url('src/img/home/hero-development.jpg')" data-id="1")
+							.hero-view-item(data-parallax="scroll" data-image-src='src/img/home/hero-development.jpg' data-z-index="inherit" data-mirror-container=".hero-parallax-mirror" data-id="1")
+							
+								.hero-view-icon(style="background-image: url('src/img/home/hero-leaf-2.svg')")
+
+								.hero-view-item__text
+									.hero-view-item__left
+										.hero-view-item__small-text THE BRADLEY DEVELOPMENT GROUP
+										.hero-view-item__title Development
+
+									.hero-view-item__right
+										a(href="projects.html" class="btn btn-inverse btn--with-icon")
+											span.btn__text See Projects
+											span.btn__icon
+												span.icon.icon-arrow-right
+
+							//-.hero-view-item(style="background-image: url('src/img/home/hero-construction.jpg')" data-id="2")
+							.hero-view-item(data-parallax="scroll" data-image-src='src/img/home/hero-construction.jpg' data-z-index="inherit" data-mirror-container=".hero-parallax-mirror" data-id="2")
+								.hero-view-icon(style="background-image: url('src/img/home/hero-leaf-3.svg')")
+
+								.hero-view-item__text
+									.hero-view-item__left
+										.hero-view-item__small-text Certified
+										.hero-view-item__title Construction
+
+									.hero-view-item__right
+										a(href="projects.html" class="btn btn-inverse btn--with-icon")
+											span.btn__text See Projects
+											span.btn__icon
+												span.icon.icon-arrow-right
+
+			.section.capabilities
+				.container
+					.section-heading.section-heading--with-arrow
+						.section-heading__l
+							.h2 Capabilities &amp; Services
+						.section-heading__r <p>Award winning design &amp; development.</p>
+							a(href="about-us.html" class="btn btn-primary btn--with-icon")
+								span.btn__text About Us
+								span.btn__icon
+									span.icon.icon-arrow-right
+
+
+					.section-content
+						.capabilities-grid
+							.capabilities-grid__line1
+							.capabilities-grid__line2
+							.capabilities-grid__line3
+
+							.row
+								.col-12.col-sm-6.col-md-4.capabilities-item
+									.capabilities-item__wrapper
+										.capabilities-item__text Acquisition &amp; Planning.
+										.capabilities-item__number
+											img(src="src/img/home/1.svg" alt="" class="img-default")
+											img(src="src/img/home/1-active.svg" alt="" class="img-active")
+
+										.capabilities-grid__line4
+
+								.col-12.col-sm-6.col-md-4.capabilities-item
+									.capabilities-item__wrapper
+										.capabilities-item__text Equity &amp; Financing.
+										.capabilities-item__number
+											img(src="src/img/home/2.svg" alt="" class="img-default")
+											img(src="src/img/home/2-active.svg" alt="" class="img-active")
+
+										.capabilities-grid__line5
+										.capabilities-grid__line6
+
+								.col-12.col-sm-6.col-md-4.capabilities-item
+									.capabilities-item__wrapper
+										.capabilities-item__text Architectural &amp; Engineering.
+										.capabilities-item__number
+											img(src="src/img/home/3.svg" alt="" class="img-default")
+											img(src="src/img/home/3-active.svg" alt="" class="img-active")
+
+										.capabilities-grid__line7
+
+								.col-12.col-sm-6.col-md-4.capabilities-item
+									.capabilities-item__wrapper
+										.capabilities-item__text Full Construction Services
+										.capabilities-item__number
+											img(src="src/img/home/4.svg" alt="" class="img-default")
+											img(src="src/img/home/4-active.svg" alt="" class="img-active")
+								.col-12.col-sm-6.col-md-4.capabilities-item
+									.capabilities-item__wrapper
+										.capabilities-item__text Asset Delivery.
+										.capabilities-item__number
+											img(src="src/img/home/5.svg" alt="" class="img-default")
+											img(src="src/img/home/5-active.svg" alt="" class="img-active")
+								.col-12.col-sm-6.col-md-4.capabilities-item.capabilities-item--text-only
+									.capabilities-item__wrapper
+										.capabilities-item__text <strong>Design, Build &amp; Develop</strong><br> own projects
+
+			-
+				var recent_projects = [
+					{
+						img: "src/img/home/recent-project-01.jpg",
+						title: "Linden Row",
+						loc: "Green Hills",
+						tag: "Architecture"
+					},
+					{
+						img: "src/img/home/recent-project-02.jpg",
+						title: "Fairfax Flats",
+						loc: "Los Angeles, CA",
+						tag: "CONSTRUCTION"
+					}
+				];
+			.section.projects-gallery-section
+				.container
+					.section-heading.section-heading--with-arrow
+						.section-heading__l
+							.h2 Recent Projects
+						.section-heading__r <p>Over <strong>$1 Billion</strong> in projects completed.</p>
+							a(href="projects.html" class="btn btn-primary btn--with-icon")
+								span.btn__text All Projects
+								span.btn__icon
+									span.icon.icon-arrow-right
+
+				.section-content
+					.projects-gallery
+						.projects-gallery__slides
+							// Slider main container
+							.swiper.js-gallery-slider
+								// Additional required wrapper
+								.swiper-wrapper
+									// Slides
+									each item in recent_projects
+										.swiper-slide
+											.projects-gallery-card
+												.projects-gallery-card__wrapper
+													img(src=item.img alt="")
+													.projects-gallery-card__content
+														.projects-gallery-card__title #{item.title}
+														.projects-gallery-card__location #{item.loc}
+														.projects-gallery-card__tag #{item.tag}
+
+													a(href="single-project.html" title="Go To Project").projects-gallery-card__link
+
+								.swiper-scrollbar
+								
+
+
+			include ../partials/footer
+			include ../partials/js

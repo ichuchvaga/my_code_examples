@@ -1,0 +1,131 @@
+/**
+ * Buttons styles
+ */
+.btn
+	text-decoration: none
+	border-radius: 100px
+	font-size: 12px
+	line-height: 1.1em
+	padding: 13px 20px 12px
+	font-weight: 500
+	letter-spacing: 0.05em
+	text-transform: uppercase
+	font-family: $pro
+
+	&__text
+		display: inline-block
+		vertical-align: middle
+		
+	&__icon
+		display: inline-block
+		vertical-align: middle
+		font-size: 0
+		line-height: 0
+		margin-left: 25px
+		position: relative
+		left: 0
+		transition: all .5s ease
+
+	&:hover
+		.btn__icon
+			left: 4px
+
+	&.btn-primary
+		color: #fff
+		background-color: #000
+		border-color: #000
+		box-shadow: none
+
+		&:hover
+			color: #fff
+			background-color: lighten(#000, 5%)
+			border-color: lighten(#000, 5%)
+			box-shadow: none
+
+		&:not(:disabled):not(.disabled).active,
+		&:not(:disabled):not(.disabled):active
+			background-color: lighten(#000, 5%)
+			border-color: lighten(#000, 5%)
+			color: #fff
+
+		&:not(:disabled):not(.disabled).active:focus,
+		&:not(:disabled):not(.disabled):active:focus
+			box-shadow: none
+
+	&.btn-inverse
+		color: #000
+		background-color: #fff
+		border-color: #fff
+		box-shadow: none
+
+		&:hover
+			color: #000
+			background-color: lighten(#fff, 5%)
+			border-color: lighten(#fff, 5%)
+			box-shadow: none
+
+		&:not(:disabled):not(.disabled).active,
+		&:not(:disabled):not(.disabled):active
+			background-color: lighten(#fff, 5%)
+			border-color: lighten(#fff, 5%)
+			color: #000
+
+		&:not(:disabled):not(.disabled).active:focus,
+		&:not(:disabled):not(.disabled):active:focus
+			box-shadow: none
+
+		.icon-arrow-right
+			background-image: url("../img/arrow-right-black.svg")
+
+	&.btn-secondary
+		color: $text-primary
+		background-color: #fff
+		border-color: #fff
+		
+		box-shadow: 5px 5px 5px rgba(129, 97, 90, 0.2)
+
+		&:hover
+			color: $text-primary
+			box-shadow: 5px 5px 5px rgba(129, 97, 90, 0)
+
+		&:not(:disabled):not(.disabled).active,
+		&:not(:disabled):not(.disabled):active
+			background-color: #fff
+			border-color: #fff
+			color: $text-primary
+
+		&:not(:disabled):not(.disabled).active:focus,
+		&:not(:disabled):not(.disabled):active:focus
+			box-shadow: 5px 5px 5px rgba(129, 97, 90, 0)
+
+	&.btn-outline
+		color: #000
+		background-color: transparent
+		border-color: #000
+
+		box-shadow: none
+
+		.icon-arrow-right
+			background-image: url("../img/arrow-right-black.svg")
+
+		&:hover
+			color: #000
+			background-color: transparent
+			border-color: #000
+			box-shadow: none
+
+		&:not(:disabled):not(.disabled).active,
+		&:not(:disabled):not(.disabled):active
+			background-color: transparent
+			border-color: #000
+			color: #000
+
+		&:not(:disabled):not(.disabled).active:focus,
+		&:not(:disabled):not(.disabled):active:focus
+			box-shadow: none
+
+	&.btn-lg
+		font-size: 16px
+		line-height: 22px
+		padding: 23px 47px
+		letter-spacing: 0.12em

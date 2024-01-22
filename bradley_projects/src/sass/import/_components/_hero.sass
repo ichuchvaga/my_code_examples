@@ -1,0 +1,270 @@
+.hero
+	.container
+		padding-left: 0
+		padding-right: 0
+
+.hero-wrapper
+	display: flex
+	width: 100%
+	justify-content: flex-start
+	align-items: stretch
+
+.hero-nav
+	width: 50%
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: flex-start
+	position: relative
+	padding-right: 1px
+
+	&__title
+		color: #000
+		font-size: 12px
+		line-height: 1.1em
+		letter-spacing: 0.15em
+		font-family: $mono
+		margin-left: 92px
+		margin-bottom: 50px
+
+	&__companies
+		width: 100%
+		border-top: 1px solid #c6c6c6
+	
+	&__company-link
+		display: block
+		font-weight: normal
+		font-size: 60px
+		line-height: 1em
+		letter-spacing: -0.02em
+		color: #000
+		text-decoration: none
+		border-bottom: 1px solid #c6c6c6
+		padding: 20px 90px 19px
+		transition: background-color .3s ease
+
+		&.active
+			background-color: #F7F7F7
+			position: relative
+
+			&:after
+				content: ''
+				display: block
+				width: 120px
+				height: 10px
+				position: absolute
+				top: 50%
+				margin-top: -5px
+				right: 0
+				background: transparent url("../img/hero-nav-arrow.svg") no-repeat 0 0
+
+			
+
+	&__scroll
+		color: #4d4d4d
+		font-weight: normal
+		font-size: 14px
+		line-height: 1.1em
+		position: absolute
+		bottom: 52px
+		left: 90px
+		padding-left: 40px
+		padding-top: 6px
+
+		&:before
+			content: ''
+			display: block
+			width: 20px
+			height: 20px
+			background: transparent url("../img/hero-scroll-icon.svg") no-repeat 0 0
+			position: absolute
+			top: 3px
+			left: 0
+			z-index: 2
+
+		&:after
+			content: ''
+			display: block
+			height: 1px
+			background-color: #000
+			width: 90px
+			position: absolute
+			left: -90px
+			top: 13px
+			z-index: 2
+		
+
+.hero-view
+	width: 50%
+	height: 750px
+	position: relative
+
+.hero-view-item
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	height: 750px
+	z-index: 10
+	display: block
+	transition: opacity 0.75s ease
+	opacity: 0
+	background-repeat: no-repeat
+	background-position: center center
+	background-size: cover
+
+	&.active
+		opacity: 1
+	
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%)
+		z-index: 1
+
+	&__text
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		align-items: flex-end
+		width: 100%
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		padding: 90px
+		color: #fff
+		z-index: 2
+
+	&__small-text
+		font-family: $mono
+		font-size: 12px
+		line-height: 1.1em
+		letter-spacing: 0.15em
+		color: #fff
+		font-weight: normal
+		margin-bottom: 15px
+		text-transform: uppercase
+
+	&__title
+		font-weight: 400
+		font-size: 30px
+		line-height: 1.1em
+
+	&__right
+		margin-left: auto
+		right: 0
+
+.hero-view-icon
+	display: block
+	width: 75px
+	height: 75px
+	position: absolute
+	top: 90px
+	left: 90px
+	z-index: 4
+
+@media screen and (max-width: 1230px)
+	/**/
+	.hero-nav
+		&__company-link
+			font-size: 48px
+			padding-left: 50px
+			padding-right: 50px
+
+		&__title
+			margin-left: 52px
+
+		&__scroll
+			left: 50px
+
+	.hero-view-item
+		&__text
+			padding: 50px
+
+		&__left
+			padding-right: 30px
+
+		&__right
+			flex-shrink: 0
+
+	.hero-view-icon
+		top: 50px
+		left: 50px
+		width: 50px
+		height: 50px
+		background-size: contain
+
+@media screen and (max-width: 1024px)
+	/**/
+	.hero-nav
+		&__company-link
+			font-size: 36px
+			padding-left: 15px
+			padding-right: 15px
+
+			&.active:after
+				content: unset
+				display: none			
+
+		&__title
+			margin-left: 17px
+
+		&__scroll
+			left: 15px
+
+	.hero-view-item
+		&__text
+			flex-direction: column
+			align-items: flex-start
+			justify-content: flex-start
+			padding: 30px
+
+		&__right
+			margin-left: 0
+			margin-top: 50px
+
+	.hero-view-icon
+		top: 30px
+		left: 30px
+
+	.hero-view,
+	.hero-view-item
+		height: 640px
+
+@media screen and (max-width: 991px)
+	/**/
+	.hero-view,
+	.hero-view-item
+		height: 550px
+
+@media screen and (max-width: 767px)
+	/**/
+	.hero-wrapper
+		flex-direction: column
+
+	.hero-nav
+		width: 100%
+		padding-top: 50px
+		padding-bottom: 50px
+		order: 1
+
+		&__scroll
+			display: none
+
+		&__company-link
+			font-size: 24px
+			padding-top: 15px
+			padding-bottom: 14px
+
+	.hero-view
+		order: 2
+		width: 100%
+
+	.hero-view, .hero-view-item
+		height: 400px

@@ -1,0 +1,497 @@
+.offset-container-right
+	padding-left: calc(50% - 630px)
+	font-size: 0
+	line-height: 0
+	text-align: left
+	
+	// img
+	// 	width: 100%
+
+.offset-container-left
+	font-size: 0
+	line-height: 0
+	padding-right: calc(50% - 630px)
+	text-align: right
+	position: relative
+
+	&:after
+		content: ''
+		display: block
+		width: 1px
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 50%
+		background-color: #ccc
+
+.textbox-with-icon
+	padding: 200px 0
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	align-items: center
+	width: 100%
+	background-color: #fff
+	font-weight: 300
+	font-size: 30px
+	line-height: 1.7em
+
+	p
+		margin: 0 0 1em
+
+		&:last-child
+			margin-bottom: 0
+
+.textbox-with-icon--l
+	justify-content: flex-start
+
+	&:after
+		content: ''
+		display: block
+		margin: 0 165px
+		width: 82px
+		height: 82px
+		background: transparent url("../img/about-us/text-section-icon.svg") no-repeat 0 0
+		flex-shrink: 0
+		opacity: 0.1
+
+.textbox-with-icon--r
+	p
+		max-width: 760px
+
+	&:before
+		content: ''
+		display: block
+		margin: 0 205px
+		width: 82px
+		height: 82px
+		background: transparent url("../img/about-us/text-section-icon.svg") no-repeat 0 0
+		flex-shrink: 0
+		opacity: 0.1
+
+.two-images
+	background: #F7F7F7
+	font-size: 0
+	line-height: 0
+	padding-bottom: 100px
+
+	&__wrapper
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		align-items: flex-start
+		justify-content: flex-start
+
+	&__item
+		width: 50%
+
+.two-columns-text
+	padding: 200px 0 173px 0
+	font-weight: 300
+	font-size: 16px
+	line-height: 1.7em
+
+	.col
+		&:nth-child(1)
+			padding-left: 13px
+
+		&:nth-child(2)
+			padding-left: 1px
+
+	p
+		padding-right: 130px
+
+.companies
+	background: #F7F7F7
+	padding: 45px 0
+	overflow: hidden
+	border-top: 1px solid #ccc
+	border-bottom: 1px solid #ccc
+
+.companies-grid
+	width: 100%
+
+	&__inner
+		margin-left: -15px
+		margin-right: -15px
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: flex-start
+		align-items: flex-start
+
+.companies-card
+	padding: 15px
+	color: #fff
+
+	&:nth-child(2)
+		position: relative
+
+		&:before
+			content: ''
+			display: block
+			width: 30px
+			border-left: 1px solid #c6c6c6
+			border-right: 1px solid #c6c6c6
+			position: absolute
+			top: -1000px
+			bottom: -1000px
+			left: -15px
+
+		&:after
+			content: ''
+			display: block
+			width: 30px
+			border-left: 1px solid #c6c6c6
+			border-right: 1px solid #c6c6c6
+			position: absolute
+			top: -1000px
+			bottom: -1000px
+			right: -15px
+
+	&__inner
+		position: relative
+
+	&__img
+		position: relative
+	
+		&:after
+			content: ''
+			display: block
+			background: linear-gradient(23.96deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%)
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			z-index: 1
+
+	&__top-text
+		position: absolute
+		top: 40px
+		left: 40px
+		right: 40px
+		font-weight: normal
+		font-size: 12px
+		line-height: 120%
+		letter-spacing: 0.15em
+		text-transform: uppercase
+		font-family: $mono
+		z-index: 2
+
+	&__main-content
+		position: absolute
+		z-index: 2
+		bottom: 40px
+		left: 40px
+		right: 40px
+
+	&__title
+		font-weight: normal
+		font-size: 36px
+		line-height: 1em
+
+	&__btn
+		margin-top: 30px
+
+.companies + .section
+	padding-top: 140px
+
+.team
+	padding-top: 185px
+	background-color: #fff
+	overflow: hidden
+
+.team-grid
+	padding-top: 15px
+	padding-bottom: 15px
+	border-bottom: 1px solid #ccc
+	border-left: 1px solid #ccc
+	border-right: 1px solid #ccc
+	position: relative
+
+	&:before
+		content: ''
+		display: block
+		height: 1px
+		background-color: #ccc
+		position: absolute
+		top: -1px
+		left: -5000px
+		right: -5000px
+
+	&:after
+		content: ''
+		display: block
+		height: 1px
+		background-color: #ccc
+		position: absolute
+		bottom: -1px
+		left: -5000px
+		right: -5000px
+
+	
+	&__inner
+		margin-left: -15px
+		margin-right: -15px
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		align-items: flex-start
+		justify-content: flex-start
+
+.team-card
+	width: 33.33%
+	padding: 15px
+	font-size: 0
+	line-height: 0
+
+	&__inner
+		position: relative
+
+	&__img
+		font-size: 0
+		line-height: 0
+		position: relative
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			z-index: 1
+			background: linear-gradient(23.96deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%)
+
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			z-index: 2
+			background: rgba(0,0,0,0)
+			transition: all .3s ease
+
+	&__hover
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 89px
+		left: 0
+		z-index: 3
+		color: #fff
+		padding: 30px
+		opacity: 0
+		//transition: opacity .3s ease
+
+	&__main
+		color: #bfbfbf
+		font-weight: 400
+		font-size: 14px
+		line-height: 1.7em
+		max-height: 100%
+
+		p
+			margin: 0 0 25px
+
+			&:last-child
+				margin-bottom: 0
+
+	&__bottom
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: center
+		position: absolute
+		bottom: 30px
+		left: 30px
+		right: 30px
+		z-index: 3
+		height: 59px
+
+		&-l
+		&-r
+
+	&__name
+		font-size: 26px
+		line-height: 1em
+		font-weight: 300
+		color: #fff
+
+	&__descr
+		color: #bfbfbf
+		font-weight: 400
+		font-size: 14px
+		line-height: 1.7em
+		text-transform: uppercase
+		margin-top: 10px
+
+	.instagram-circle-link
+		display: none
+
+	&:hover
+		.team-card
+			&__hover
+				opacity: 1
+
+			&__img
+				&:after
+					background: rgba(0,0,0,0.7)
+
+		.instagram-circle-link
+			display: block
+
+	&:nth-child(2)
+		position: relative
+
+		&:before
+			content: ''
+			display: block
+			width: 30px
+			border-left: 1px solid #c6c6c6
+			border-right: 1px solid #c6c6c6
+			position: absolute
+			top: -15px
+			bottom: -15px
+			left: -15px
+
+		&:after
+			content: ''
+			display: block
+			width: 30px
+			border-left: 1px solid #c6c6c6
+			border-right: 1px solid #c6c6c6
+			position: absolute
+			top: -15px
+			bottom: -15px
+			right: -15px
+
+.instagram-circle-link
+	display: block
+	border-radius: 50%
+	width: 40px
+	height: 40px
+	border: 1px solid #fff
+	font-size: 0
+	line-height: 38px
+	text-align: center
+
+	.icon
+		vertical-align: middle
+
+.simplebar-scrollbar:before
+	background-color: #fff
+
+.about-us
+	.capabilities
+		background-color: #fff
+		
+		.section-content
+			padding-bottom: 0
+
+@media screen and (max-width: 1230px)
+	/**/
+	.textbox-with-icon
+		padding-top: 100px
+		padding-bottom: 100px
+
+		font-size: 24px
+
+		&--l,
+			&:after
+				margin-left: 80px
+				margin-right: 80px
+
+		&--r
+			&:before
+				margin-left: 80px
+				margin-right: 80px
+
+	.two-images
+		padding-bottom: 80px
+
+	.two-columns-text
+		padding-top: 100px
+		padding-bottom: 73px
+
+		p
+			padding-right: 80px
+
+@media screen and (max-width: 859px)
+	/**/
+	.companies-card
+		&__inner
+			&:after
+				content: unset
+				display: none
+
+		&:nth-child(2)
+			&:before,
+			&:after
+				content: unset
+				display: none
+
+@media screen and (max-width: 767px)
+	/**/
+	.textbox-with-icon
+		font-size: 20px
+		padding-top: 155px
+		padding-bottom: 50px
+		position: relative
+
+		&--l:after,
+		&--r:before
+				width: 55px
+				height: 55px
+				background-size: contain
+				margin-left: auto
+				margin-right: auto
+				left: 0
+				right: 0
+				top: 60px
+				position: absolute
+
+	.two-images
+		padding-bottom: 50px
+
+	.two-columns-text
+		padding-top: 55px
+		padding-bottom: 35px
+
+		p
+			padding-right: 30px
+
+	.companies + .section
+		padding-top: 62px
+
+	.team-card
+		width: 100%
+		max-width: 330px
+
+		&:nth-child(2)
+			&:before,
+			&:after
+				content: unset
+				display: none
+
+	.team-grid
+		&__inner
+			flex-direction: column
+			align-items: flex-start
+
+	.team
+		padding-top: 47px
+
+	.companies-card
+		&__title
+			font-size: 30px
+
+@media screen and (max-width: 480px)
+	/**/
+	.textbox-with-icon
+		font-size: 18px
